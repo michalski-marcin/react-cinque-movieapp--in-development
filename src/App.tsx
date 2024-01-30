@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-     dwewdwd
+     <p className='text-xl'>hbhiuhuihui</p>
     </>
   )
 }
