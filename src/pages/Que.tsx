@@ -1,4 +1,4 @@
-function ToWatch() {
+function Que() {
     return (
       <div className="page-wrap">
     <div>Watch List</div>
@@ -6,4 +6,4 @@ function ToWatch() {
     )
   }
   
-  export default ToWatch;
+  export default Que;

@@ -1,35 +1,39 @@
 import './App.css';
-import Navbar from './components/navbar/Navbar';
+import Navbar from './components/Navbar';
+
+// Pages
 import Search from './pages/Search';
-import ToWatch from './pages/ToWatch';
+import Que from './pages/Que';
 import Trending from './pages/Trending';
+
+// Libraries
 import { AnimatePresence } from 'framer-motion';
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
-
-
   return (
-    <div className='m-2'>
-     <Navbar />
-     <AnimatePresence mode='wait'>
-        <Routes>
-          <Route
-            path='/'
-            element={<Trending />}
-          />
-          <Route
-            path='/search'
-            element={<Search />}
-          />
-          <Route
-            path='/towatch'
-            element={<ToWatch />}
-          />
-        </Routes>
-      </AnimatePresence>
-    </div>
-  )
+    <BrowserRouter>
+      <div className='m-2'>
+        <Navbar />
+        <AnimatePresence mode='wait'>
+          <Routes>
+            <Route
+              index
+              element={<Trending />}
+            />
+            <Route
+              path='search'
+              element={<Search />}
+            />
+            <Route
+              path='que'
+              element={<Que />}
+            />
+          </Routes>
+        </AnimatePresence>
+      </div>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
