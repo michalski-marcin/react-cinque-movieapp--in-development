@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .page-wrap {
     margin-top: 100px;
 }

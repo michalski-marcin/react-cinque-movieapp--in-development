@@ -10,7 +10,11 @@ import Trending from './pages/Trending';
 import { AnimatePresence } from 'framer-motion';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+// 
+
+
 function App() {
+
   return (
     <BrowserRouter>
       <div className='m-2'>
@@ -32,6 +36,10 @@ function App() {
           </Routes>
         </AnimatePresence>
       </div>
+      {/* <div className="bg-black w-[100%] h-[100%] absolute top-0 left-0">
+        Halo
+      </div>  */}
+      
     </BrowserRouter>
   );
 }

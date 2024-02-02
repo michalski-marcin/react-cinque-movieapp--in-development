@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
     return (
-        <div className='bg-slate-400 flex justify-between items-center fixed w-[100%] left-0 top-0 p-3'>
+        <div className='bg-slate-400 flex justify-between items-center fixed w-[100%] left-0 top-0 p-3 z-10'>
             <div className="logo text-2xl">CinQue</div>
             <div>
                 <ul className="flex gap-3">

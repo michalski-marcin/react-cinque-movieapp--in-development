@@ -24,21 +24,26 @@ function Trending() {
 
   return (
     <div className='page-wrap'>
-      <div>
+      <div className=''>
         <h2>Movies</h2>
-        {movieResults.slice(0, 10).map((movie) => (
-          <MovieTrendCard
-            key={movie.id}
-            {...movie}
-          />
-        ))}
+        <div className='grid grid-cols-5 gap-2 w-[80%]  m-auto '>
+          {movieResults.slice(0, 10).map((movie) => (
+            <MovieTrendCard
+              key={movie.id}
+              {...movie}
+            />
+          ))}
+        </div>
+
         <h2>TV Shows</h2>
-        {tvShowResults.map((tvShow) => (
-          <MovieTrendCard
-            key={tvShow.id}
-            {...tvShow}
-          />
-        ))}
+        <div className='grid grid-cols-5 gap-1 m-auto'>
+          {tvShowResults.slice(0, 10).map((tvShow) => (
+            <MovieTrendCard
+              key={tvShow.id}
+              {...tvShow}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
