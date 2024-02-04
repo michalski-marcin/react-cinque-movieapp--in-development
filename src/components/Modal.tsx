@@ -17,16 +17,18 @@ const Modal = ({ result, closeModal, title }: ModalProps) => {
       animate={{ opacity: 100 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className='fixed w-[400px] h-[300px] left-[50%] top-[50%] z-50 bg-opacity-85 filter'
+      className='fixed w-[80%] aspect-video  max-sm:aspect-[3/4] max-[480px]:w-[90%] max-sm:max-h-[90%] left-[50%] top-[50%] shadow-xl z-50 bg-opacity-85 filter'
       style={{
         background: 'rgba(0, 0, 0, .50)',
-        backgroundImage: `url(https://image.tmdb.org/t/p/w500${result.backdrop_path})`,
+        backgroundImage: `url(https://image.tmdb.org/t/p/w1280${result.backdrop_path})`,
         backgroundBlendMode: 'darken',
-        backgroundSize: 'contain',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         transform: 'translate(-50%, -50%)',
       }}
       onClick={closeModal}>
+      {/* <img className='' src={`https://image.tmdb.org/t/p/w1280${result.backdrop_path}`} />  */}
       {title}
     </motion.div>
   );
