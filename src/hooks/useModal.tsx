@@ -9,7 +9,7 @@ const useModal = () => {
         animate={{ opacity: 100 }}
         exit={{ opacity: 0 }}
         transition={{ duration: .2 }}
-        className='fixed inset-0 bg-black bg-opacity-50 z-40'
+        className='fixed inset-0 bg-black bg-opacity-60 z-40'
         onClick={closeModal}></motion.div>
     );
   };

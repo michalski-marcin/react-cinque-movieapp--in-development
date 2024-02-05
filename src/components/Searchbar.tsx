@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-
 const SearchMovie = ({ onSearchResults, onChange }) => {
   const [query, setQuery] = useState('');
   const [searchType, setSearchType] = useState('Movie');
@@ -26,7 +25,7 @@ const SearchMovie = ({ onSearchResults, onChange }) => {
   };
 
   return (
-    <div className='flex justify-center pt-6 ml-3 max-md:pt-12 max-md:ml-0'>
+    <div className='flex justify-center ml-3  max-md:ml-0'>
       <form
         onSubmit={searchMovies}
         className='flex flex-col items-center w-[70%]'>

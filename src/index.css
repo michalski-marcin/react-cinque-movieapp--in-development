@@ -6,6 +6,7 @@
   margin-top: 100px;
 }
 
+
 .active {
   @apply text-indigo-200 transition-[0.3s]
 }
@@ -14,9 +15,9 @@ li {
     @apply hover:text-indigo-300 transition-[0.3s]
 }
 
-/* body {
+body {
   background-image: url(top-bg.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-blend-mode:multiply;
-} */
+}
