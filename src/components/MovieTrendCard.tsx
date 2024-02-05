@@ -7,6 +7,7 @@ import { AnimatePresence } from 'framer-motion';
 interface MovieTrendResult {
   vote_average: number;
   poster_path: string;
+  backdrop_path: string;
   title: string;
   name: string;
 }

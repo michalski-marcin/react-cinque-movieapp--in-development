@@ -13,3 +13,10 @@
 li {
     @apply hover:text-indigo-300 transition-[0.3s]
 }
+
+/* body {
+  background-image: url(top-bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode:multiply;
+} */
