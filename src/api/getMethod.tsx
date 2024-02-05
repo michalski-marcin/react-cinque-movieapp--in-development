@@ -1,4 +1,4 @@
-const options = {
+const getMethod = {
     method: 'GET',
     headers: {
       accept: 'application/json',
@@ -6,5 +6,5 @@ const options = {
     }
   };
 
-export default options;
+export default getMethod;
 
