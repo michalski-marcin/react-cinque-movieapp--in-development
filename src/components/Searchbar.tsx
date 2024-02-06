@@ -1,10 +1,19 @@
 import { useState } from 'react';
+import ChangeEvent from '../interfaces/changeEvent';
+import tmdbTypes from '../interfaces/tmdbTypes';
 
-const SearchMovie = ({ onSearchResults, onChange }) => {
+
+interface Props {
+  onSearchResults: (results: tmdbTypes[]) => void;
+  onChange: (e: ChangeEvent) => void;
+}
+
+
+const SearchMovie = ({ onSearchResults, onChange }: Props) => {
   const [query, setQuery] = useState('');
   const [searchType, setSearchType] = useState('Movie');
 
-  const searchMovies = async (e) => {
+  const searchMovies = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const url = `https://api.themoviedb.org/3/search/${searchType.toLowerCase()}?api_key=60593d1afc6977ce7535303358ef980d&language=en-US&query=${query}&page=1&include_adult=false`;
@@ -19,7 +28,7 @@ const SearchMovie = ({ onSearchResults, onChange }) => {
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent) => {
     setSearchType(e.target.value);
     onChange(e);
   };

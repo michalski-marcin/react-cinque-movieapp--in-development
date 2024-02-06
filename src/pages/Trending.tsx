@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import MovieTrendCard from '../components/MovieTrendCard';
 import { fetchData } from '../api/fetch';
+import tmdbTypes from '../interfaces/tmdbTypes';
 
 function Trending() {
-  const [movieResults, setMovieResults] = useState([]);
-  const [tvShowResults, setTvShowResults] = useState([]);
+  const [movieResults, setMovieResults] = useState<tmdbTypes[]>([]);
+  const [tvShowResults, setTvShowResults] = useState<tmdbTypes[]>([]);
 
   useEffect(() => {
     const fetchAllData = async () => {

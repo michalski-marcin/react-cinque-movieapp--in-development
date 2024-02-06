@@ -3,13 +3,15 @@ import SearchMovie from '../components/Searchbar';
 import PersonSearchCard from '../components/PersonSearchCard';
 import MovieSearchCard from '../components/MovieSearchCard';
 import TVSearchCard from '../components/TVSearchCard';
+import tmdbTypes from '../interfaces/tmdbTypes';
+import ChangeEvent from '../interfaces/changeEvent';
 
 function Search() {
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState<tmdbTypes[]>([]);
   const [searchType, setSearchType] = useState('Movie');
   const [renderType, setRenderType] = useState('');
   const [noResult, setNoResult] = useState(false);
-  let SearchComponent;
+  let SearchComponent: React.ComponentType<tmdbTypes>;
   if (renderType === 'Movie') {
     SearchComponent = MovieSearchCard;
   } else if (renderType === 'TV') {
@@ -17,7 +19,7 @@ function Search() {
   } else if (renderType === 'Person') {
     SearchComponent = PersonSearchCard;
   }
-  const handleSearchResults = (results) => {
+  const handleSearchResults = (results: tmdbTypes[]) => {
     setSearchResults(results);
     setRenderType(searchType);
     if (searchType && results.length === 0) {
@@ -26,7 +28,7 @@ function Search() {
       setNoResult(false);
     }
   };
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent) => {
     setSearchType(e.target.value);
   };
   return (
@@ -42,7 +44,6 @@ function Search() {
         {searchResults.map((result) => (
           <div className='my-2'>
             <SearchComponent
-              className='p-2'
               key={result.id}
               {...result}
             />

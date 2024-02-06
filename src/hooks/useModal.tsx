@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const useModal = () => {
-  const Backdrop = ({ closeModal }) => {
+  const Backdrop = ({ closeModal }: {closeModal: () => void}) => {
     return (
       <motion.div
         initial={{ opacity: 0 }}
