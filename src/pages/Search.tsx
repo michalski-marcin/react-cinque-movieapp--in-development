@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import SearchMovie from '../components/Searchbar';
+import SearchMovie from '../components/SearchMovie';
 import PersonSearchCard from '../components/PersonSearchCard';
 import MovieSearchCard from '../components/MovieSearchCard';
 import TVSearchCard from '../components/TVSearchCard';

@@ -1,18 +1,9 @@
 import Modal from './Modal';
 import useModal from '../hooks/useModal';
 import { AnimatePresence } from 'framer-motion';
+import tmdbTypes from '../interfaces/tmdbTypes';
 
-
-
-interface MovieTrendResult {
-  vote_average: number;
-  poster_path: string;
-  backdrop_path: string;
-  title: string;
-  name: string;
-}
-
-const MovieTrendCard = (result: MovieTrendResult) => {
+const MovieTrendCard = (result: tmdbTypes) => {
   const { modalOpen, openModal, closeModal, Backdrop } = useModal();
 
   const voteText = result.vote_average ? result.vote_average.toFixed(1) : 'N/A';
@@ -34,16 +25,17 @@ const MovieTrendCard = (result: MovieTrendResult) => {
         </div>
       </div>
       <AnimatePresence>
-      {modalOpen && (
-        <div>
-        <Backdrop closeModal={closeModal} />
-        <Modal
-          result={result}
-          closeModal={closeModal}
-          title={title}
-        />
-        </div>
-      )}
+        {modalOpen && (
+          <div>
+            <Backdrop closeModal={closeModal} />
+            <Modal
+              result={result}
+              closeModal={closeModal}
+              title={title}
+              voteText={voteText}
+            />
+          </div>
+        )}
       </AnimatePresence>
     </div>
   );

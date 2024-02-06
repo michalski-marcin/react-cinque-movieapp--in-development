@@ -21,13 +21,13 @@ function Navbar() {
   return (
     <div
       onScroll={handleScroll}
-      className=' flex justify-between items-center fixed w-[100%] left-0 top-0 py-5 px-10 max-md:px-6 max-sm:px-2 z-10 transition-[0.3]'
+      className=' flex justify-between items-center fixed w-[100%] left-0 top-0 py-5 px-10 max-md:px-6 max-sm:px-3 z-10 transition-[0.3]'
       style={
         ifScrolled
           ? { background: 'rgba(0, 0, 0, 0.4)', backdropFilter: 'blur(7px)' }
           : {}
       }>
-      <div className='logo text-2xl'>CinQue</div>
+      <img className='h-[55px]' src="logo.svg" alt="logo" />
       <div>
         <ul className='flex gap-3 text-indigo-400'>
           <li>

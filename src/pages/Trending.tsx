@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import MovieTrendCard from '../components/MovieTrendCard';
-import { fetchData } from '../api/fetch';
+import { fetchData } from '../api/getResults';
 import tmdbTypes from '../interfaces/tmdbTypes';
 
 function Trending() {

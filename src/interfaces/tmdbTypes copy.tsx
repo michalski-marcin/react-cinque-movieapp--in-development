@@ -1,4 +1,5 @@
 interface tmdbTypes {
+  
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
@@ -13,7 +14,6 @@ interface tmdbTypes {
   first_air_date: string;
   name: string;
   release_date: string;
-  runtime: number;
   title: string;
   video: boolean;
   vote_average: number;

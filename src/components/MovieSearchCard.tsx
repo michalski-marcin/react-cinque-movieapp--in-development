@@ -1,18 +1,9 @@
 import { AnimatePresence } from 'framer-motion';
 import Modal from './Modal';
 import useModal from '../hooks/useModal';
+import tmdbTypes from '../interfaces/tmdbTypes';
 
-interface MovieSearchResult {
-  original_title: string;
-  title: string;
-  vote_average: number;
-  poster_path: string;
-  backdrop_path: string;
-  release_date: string;
-  overview: string;
-}
-
-const MovieSearchCard = (result: MovieSearchResult) => {
+const MovieSearchCard = (result: tmdbTypes) => {
   console.log(result);
   const { modalOpen, openModal, closeModal, Backdrop } = useModal();
 
@@ -33,8 +24,7 @@ const MovieSearchCard = (result: MovieSearchResult) => {
             alt='poster'
             className='w-[120px] mr-2'
           />
-          <div
-            className='flex flex-col overflow-hidden'>
+          <div className='flex flex-col overflow-hidden'>
             <p className='overflow-hidden truncate text-indigo-200 font-medium'>
               {title}
             </p>
@@ -57,6 +47,7 @@ const MovieSearchCard = (result: MovieSearchResult) => {
                 result={result}
                 closeModal={closeModal}
                 title={title}
+                voteText={voteText}
               />
             </div>
           )}
