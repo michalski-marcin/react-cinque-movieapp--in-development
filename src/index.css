@@ -3,21 +3,20 @@
 @tailwind utilities;
 
 .page-wrap {
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
-
 .active {
-  @apply text-indigo-200 transition-[0.3s]
+  @apply text-indigo-200 transition-[0.3s];
 }
 
 li {
-    @apply hover:text-indigo-300 transition-[0.3s]
+  @apply hover:text-indigo-300 transition-[0.3s];
 }
 
 body {
   background-image: url(top-bg.jpg);
   background-size: cover;
   background-attachment: fixed;
-  background-blend-mode:multiply;
+  background-blend-mode: multiply;
 }
