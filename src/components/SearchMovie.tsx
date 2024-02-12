@@ -39,7 +39,7 @@ const SearchMovie = ({ onSearchResults, onChange }: Props) => {
       <form
         onSubmit={searchMovies}
         className='flex flex-col items-center w-[70%]'>
-        <div className=''>
+        <div className='mb-3'>
           <label htmlFor='query' />
           <input
             className='w-[400px] px-3 py-1 rounded-3xl bg-indigo-900 border-2 border-indigo-500 max-sm:w-[300px]'
@@ -50,7 +50,7 @@ const SearchMovie = ({ onSearchResults, onChange }: Props) => {
             onChange={(e) => setQuery(e.target.value)}
           />
         </div>
-        <div>
+        <div >
           <input
             name='search-type'
             type='radio'
@@ -60,7 +60,7 @@ const SearchMovie = ({ onSearchResults, onChange }: Props) => {
             defaultChecked
             className='radio'
           />
-          <label htmlFor='movies-radio'>Movies</label>
+          <label htmlFor='movies-radio' className='mr-3'>Movies</label>
           <input
             name='search-type'
             type='radio'
@@ -69,7 +69,7 @@ const SearchMovie = ({ onSearchResults, onChange }: Props) => {
             onChange={handleChange}
             className='radio'
           />
-          <label htmlFor='tvseries-radio'>TV Series</label>
+          <label htmlFor='tvseries-radio' className='mr-3'>TV Series</label>
           <button type='submit'>Search</button>
         </div>
       </form>
