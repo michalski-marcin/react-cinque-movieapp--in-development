@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import ChangeEvent from '../interfaces/changeEvent';
 import tmdbTypes from '../interfaces/tmdbTypes';
-import "../styles/radioButtons.css"
-
+import '../styles/radioButtons.css';
+import { FaSearch } from "react-icons/fa";
+import { IconContext } from 'react-icons';
 
 interface Props {
   onSearchResults: (results: tmdbTypes[]) => void;
   onChange: (e: ChangeEvent) => void;
 }
-
 
 const SearchMovie = ({ onSearchResults, onChange }: Props) => {
   const [query, setQuery] = useState('');
@@ -38,19 +38,27 @@ const SearchMovie = ({ onSearchResults, onChange }: Props) => {
     <div className='flex justify-center ml-3  max-md:ml-0'>
       <form
         onSubmit={searchMovies}
-        className='flex flex-col items-center w-[70%]'>
-        <div className='mb-3'>
+        className='flex flex-col items-center'>
+        <div className='mb-3 relative'>
           <label htmlFor='query' />
           <input
-            className='w-[400px] px-3 py-1 rounded-3xl bg-indigo-900 border-2 border-indigo-500 max-sm:w-[300px]'
+            className='w-[400px] px-3 py-[7px] pl-8 rounded-3xl bg-indigo-900 border-2 border-indigo-500 max-sm:w-[300px]'
             type='text'
             name='query'
             placeholder='Search for a movie, actor'
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
+          <button
+            type='submit'
+            className='absolute left-2 top-2'>
+            <IconContext.Provider
+              value={{ className: 'submitIcon' }}>
+              <FaSearch />
+            </IconContext.Provider>
+          </button>
         </div>
-        <div >
+        <div>
           <input
             name='search-type'
             type='radio'
@@ -60,7 +68,11 @@ const SearchMovie = ({ onSearchResults, onChange }: Props) => {
             defaultChecked
             className='radio'
           />
-          <label htmlFor='movies-radio' className='mr-3'>Movies</label>
+          <label
+            htmlFor='movies-radio'
+            className='mr-3 text-indigo-300 text-lg'>
+            Movies
+          </label>
           <input
             name='search-type'
             type='radio'
@@ -69,8 +81,12 @@ const SearchMovie = ({ onSearchResults, onChange }: Props) => {
             onChange={handleChange}
             className='radio'
           />
-          <label htmlFor='tvseries-radio' className='mr-3'>TV Series</label>
-          <button type='submit'>Search</button>
+          <label
+            htmlFor='tvseries-radio'
+            className=' text-indigo-300 text-lg'>
+            TV Series
+          </label>
+          
         </div>
       </form>
     </div>
