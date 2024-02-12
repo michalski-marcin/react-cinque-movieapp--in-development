@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ChangeEvent from '../interfaces/changeEvent';
 import tmdbTypes from '../interfaces/tmdbTypes';
+import "../styles/radioButtons.css"
 
 
 interface Props {
@@ -57,6 +58,7 @@ const SearchMovie = ({ onSearchResults, onChange }: Props) => {
             value='Movie'
             onChange={handleChange}
             defaultChecked
+            className='radio'
           />
           <label htmlFor='movies-radio'>Movies</label>
           <input
@@ -65,16 +67,9 @@ const SearchMovie = ({ onSearchResults, onChange }: Props) => {
             id='tvseries-radio'
             value='TV'
             onChange={handleChange}
+            className='radio'
           />
           <label htmlFor='tvseries-radio'>TV Series</label>
-          <input
-            name='search-type'
-            type='radio'
-            id='actors-radio'
-            value='Person'
-            onChange={handleChange}
-          />
-          <label htmlFor='actors-radio'>Actors</label>
           <button type='submit'>Search</button>
         </div>
       </form>

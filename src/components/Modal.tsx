@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import tmdbTypes from '../interfaces/tmdbTypes';
 import getMethod from '../api/getMethod';
-import { fetchData } from '../api/getResults';
+// import { fetchData } from '../api/getResults';
 import MovieModal from './MovieModal';
 import TVModal from './TVModal';
 

@@ -5,7 +5,7 @@ function Navbar() {
   const [ifScrolled, setIfScrolled] = useState(false);
 
   const offset = 60;
-  const handleScroll = () => {
+  const handleScroll: () => void = () => {
     if (window.scrollY <= offset) {
       setIfScrolled(false);
     } else {

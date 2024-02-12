@@ -20,3 +20,12 @@ body {
   background-attachment: fixed;
   background-blend-mode: multiply;
 }
+
+
+/* .radio {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  @apply bg-indigo-600 rounded 
+} */
+
