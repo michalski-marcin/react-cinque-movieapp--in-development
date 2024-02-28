@@ -21,8 +21,7 @@ const Modal = ({ result, closeModal, title, voteText }: ModalProps) => {
     getWhichType = 'movie';
   } else if (result.name) {
     getWhichType = 'tv';
-  } 
-
+  }
 
   useEffect(() => {
     const url = `https://api.themoviedb.org/3/${getWhichType}/${result.id}?language=en-US`;
@@ -43,7 +42,7 @@ const Modal = ({ result, closeModal, title, voteText }: ModalProps) => {
       animate={{ opacity: 100 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className='fixed w-[80%] aspect-video max-lg:w-[90%]  max-md:aspect-[3/4] max-md:w-[80%]   max-md:max-h-[90%] max-[480px]:w-[90%] max-[480px]:h-[80%] left-[50%] top-[50%] shadow-2xl z-50 bg-opacity-85 filter'
+      className='fixed rounded-xl w-[70%] aspect-video max-lg:w-[90%] max-md:aspect-[3/4] max-md:w-[80%]   max-md:max-h-[90%] max-[480px]:w-[90%] max-[480px]:h-[80%] left-[50%] top-[50%] shadow-[0_20px_30px_4px_rgb(0,0,0,0.6)] z-50 bg-opacity-85 filter'
       style={{
         background: 'rgba(0, 0, 0, .50)',
         backgroundImage: `url(https://image.tmdb.org/t/p/w1280${result.backdrop_path})`,
@@ -54,9 +53,8 @@ const Modal = ({ result, closeModal, title, voteText }: ModalProps) => {
         transform: 'translate(-50%, -50%)',
       }}
       onClick={closeModal}>
-        {getWhichType == 'movie' && <MovieModal {...details} />}
-        {getWhichType == 'tv' && <TVModal {...details} />}
-      
+      {getWhichType == 'movie' && <MovieModal {...details} />}
+      {getWhichType == 'tv' && <TVModal {...details} />}
     </motion.div>
   );
 };

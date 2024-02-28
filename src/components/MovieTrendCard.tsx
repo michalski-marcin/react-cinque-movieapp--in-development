@@ -11,7 +11,7 @@ const MovieTrendCard = (result: tmdbTypes) => {
   return (
     <div>
       <div
-        className=' relative text-sm cursor-pointer'
+        className=' relative text-sm cursor-pointer hover:scale-[1.02] duration-[0.25s] rounded-md overflow-hidden'
         onClick={openModal}>
         <img
           src={`https://image.tmdb.org/t/p/w500${result.poster_path}`}

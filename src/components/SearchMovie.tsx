@@ -50,6 +50,7 @@ const SearchMovie = ({ onSearchResults, onChange }: Props) => {
             onChange={(e) => setQuery(e.target.value)}
           />
           <button
+            title='search'
             type='submit'
             className='absolute left-2 top-2'>
             <IconContext.Provider
