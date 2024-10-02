@@ -3,7 +3,7 @@
 ## Introduction
 
 React Cinque is a movie and TV series search application built using React and integrated with The Movie Database (TMDb) API. The app allows users to search for movies and TV series, view details, and explore related content. It's designed for film enthusiasts and anyone who wants to discover and keep track of their favorite titles.
-![Screen of CinQue app in Chrome browser](cinque.jpg)
+![Screen of CinQue app in Chrome browser](cinque.png)
 <br>
 
 ## Features
