@@ -13,13 +13,11 @@ interface ModalProps {
   voteText: string;
 }
 
-const Modal = ({ result, closeModal, title, voteText }: ModalProps) => {
-  const [details, setDetails] = useState<tmdbTypes>([]);
+const Modal = ({ result, closeModal }: ModalProps) => {
+  const [details, setDetails] = useState<tmdbTypes | null>(null);
 
-  let getWhichType: string;
-  if (result.title) {
-    getWhichType = 'movie';
-  } else if (result.name) {
+  let getWhichType: string = 'movie';
+  if (result.name) {
     getWhichType = 'tv';
   }
 
@@ -34,7 +32,7 @@ const Modal = ({ result, closeModal, title, voteText }: ModalProps) => {
     };
 
     fetchData();
-  }, [result.id]);
+  }, [result.id, getWhichType]);
 
   return (
     <motion.div
@@ -53,8 +51,10 @@ const Modal = ({ result, closeModal, title, voteText }: ModalProps) => {
         transform: 'translate(-50%, -50%)',
       }}
       onClick={closeModal}>
-      {getWhichType == 'movie' && <MovieModal {...details} />}
-      {getWhichType == 'tv' && <TVModal {...details} />}
+
+
+      {details && getWhichType === 'movie' && <MovieModal {...details} />}
+      {details && getWhichType === 'tv' && <TVModal {...details} />}
     </motion.div>
   );
 };
